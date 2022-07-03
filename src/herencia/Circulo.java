@@ -1,24 +1,28 @@
 package herencia;
 
-public class Circulo extends Figura implements Mensajes{
+public class Circulo extends Figura implements Mensajes, MensajesDos{
     
-    private double base;
-    private double altura;
+    private double radio;
+    private double diametro;
+
+    public Circulo() {
+        super();
+    }
+    
+    
     
     
     public static void main(String[] args) {
         
-        Circulo cir = new Circulo();
+        Circulo cir = new Circulo();       
+        
         cir.setArea(10.6);
-        cir.setPerimetro(40.5);
+        cir.setPerimetro(40.5);     
+        cir.setRadio(4.6);
+        cir.setDiametro(5.6);
         
-        cir.setBase(4.6);
-        cir.setAltura(5.6);
-        
-       double areaCir1 = cir.calcularArea(cir.getBase(), cir.getAltura());
-        
-        System.out.println(" " + cir.saludo());
-       
+       double areaCir1 = cir.calcularArea(cir.getDiametro(), cir.getRadio());
+ 
         System.out.println(" Area Circulo 1 " + areaCir1);
         
         Circulo cir2 = new Circulo();
@@ -34,36 +38,53 @@ public class Circulo extends Figura implements Mensajes{
         
         System.out.println(" Area obj2  = " + otraVariable);
         System.out.println(" Perimetro obj2  = " + cir2.getPerimetro());
+        
+        
+            Figura objFig = new Circulo();
+            objFig.getArea();
+            
+            Figura objFig2 = new Figura(10.3, 20.3);
+            
+            
+            
+            Figura objFig3 = new Figura();
+            objFig3.setArea(10.3);
+            objFig3.setPerimetro(20.3);
+        
+        
     }
 
-    public double getBase() {
-        return base;
+    public double getRadio() {
+        return radio;
     }
 
-    public void setBase(double base) {
-        this.base = base;
+    public void setRadio(double radio) {
+        this.radio = radio;
     }
 
-    public double getAltura() {
-        return altura;
+    public double getDiametro() {
+        return diametro;
     }
 
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
+    public void setDiametro(double diametro) {
+        this.diametro = diametro;
+    } 
 
     @Override
     public String saludo() {
-       return "Hola mundo";
+        String hola = "Esto es un saludo desde Circulo";
+        return hola;
     }
 
     @Override
     public double area(double base, double altura) {
-       double areaCirculo = base*altura * Math.PI * 2;
-       
-       return areaCirculo;
+        return altura * base;
     }
 
+    @Override
+    public String saludoInterDos(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
-    
+ 
 }

@@ -2,7 +2,7 @@ package herencia;
 
 
 public class Cuadrado extends Figura implements Mensajes{
-
+    
     @Override
     public String saludo() {
        return "Hola desde el cuadrado";
@@ -13,6 +13,11 @@ public class Cuadrado extends Figura implements Mensajes{
         double areaCuadrado = base * altura;
         
         return  areaCuadrado;
+    }
+    
+    
+    public int calcularArea (){
+        return 0;
     }
     
 }

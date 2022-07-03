@@ -1,6 +1,6 @@
 package herencia;
 
-public class Figura {
+public class Figura  {
 
     private double area;
     private double perimetro;
@@ -11,6 +11,7 @@ public class Figura {
     public Figura(double area, double perimetro) {
         this.area = area;
         this.perimetro = perimetro;
+
     }
 
     public void setArea(double area) {
@@ -31,8 +32,7 @@ public class Figura {
 
     public double calcularArea(double base, double altura) {
 
-        double area = base * altura;
-        
+        double area = base * altura;   
         return area;
 
     }
@@ -40,6 +40,10 @@ public class Figura {
     public double calcularPerimetro() {
         return 0;
 
+    }
+    
+    private void texto (){
+        System.out.println("Soy un texto");
     }
 
 }
